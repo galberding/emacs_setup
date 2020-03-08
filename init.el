@@ -48,11 +48,11 @@ values."
                       auto-completion-private-snippets-directory nil)
      better-defaults
      emacs-lisp
-     ;; git
+     git
      (markdown :variables
                markdown-live-preview-engine 'vmd
                markdown-command "vmd")
-     org
+     (org :variables org-enable-github-support t)
      (shell :variables
 
             shell-default-height 30
