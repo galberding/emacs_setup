@@ -31,7 +31,8 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(html
-     python
+     lsp
+     (python :variables python-backend 'lsp)
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -40,7 +41,7 @@ values."
      helm
      (multiple-cursors :variables multiple-cursors-backend 'mc)
      (auto-completion :variables
-
+                      auto-completion-enable-help-tooltip t
                       auto-completion-return-key-behavior 'complete
                       auto-completion-tab-key-behavior 'cycle
                       auto-completion-complete-with-key-sequence nil
@@ -66,7 +67,7 @@ values."
             c-c++-enable-clang-support t
             c-c++-default-mode-for-headers 'c++-mode
      )
-     ;;lsp
+     
 
      )
    ;; List of additional packages that will be installed without being
@@ -322,6 +323,9 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+
+  (setenv "WORKON_HOME" "~/miniconda3/envs")
+
   )
 
 (defun dotspacemacs/user-config ()
@@ -332,8 +336,16 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+;; Python
+  (setq python-shell-interpreter "~/miniconda3/bin/python3")
+  (setq python-shell-interpreter-args "-m IPython --simple-prompt -i")
+  ;; set bar type 
   (setq powerline-default-separator 'bar)
 
+;;org stuff
+  (setq org-agenda-files '("~/org"))
+  ;; (setq org-agenda-file-regexp "~/org/*.org")
+  (setq org-directory "~/org")
 
   ;; Keys for moving between the Windows
   (global-set-key (kbd "S-M-<left>")  'windmove-left)
@@ -343,7 +355,7 @@ you should place your code here."
 
   ;; Keys for linebreak
   ;; (global-set-key "\C-c\C-d" "\C-a\C- \C-n\M-w\C-y")
-  (global-set-key "\C-c y" "\C-a\C- \C-n\M-w\C-y")
+  (global-set-key (kbd "C-c y") (kbd "C-a C-SPC C-n M-w C-y"))
   ;; Keys for multicursor
   ;;(global-set-key "\C-c ü" "\M-m s m m")
   (global-set-key (kbd "C-c c") 'mc/mark-more-like-this-extended)
