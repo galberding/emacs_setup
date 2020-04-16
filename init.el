@@ -52,7 +52,7 @@ values."
      emacs-lisp
      ipython-notebook
      git
-     (shell-scripts :variables shell-scripts-backend 'lsp)
+     ;; (shell-scripts :variables shell-scripts-backend 'lsp)
      (markdown :variables
                markdown-live-preview-engine 'vmd
                markdown-command "vmd")
@@ -69,6 +69,7 @@ values."
      (c-c++ :variables
             c-c++-enable-clang-support t
             c-c++-default-mode-for-headers 'c++-mode
+            c-c++-backend 'lsp-clangd
      )
      yaml
 
