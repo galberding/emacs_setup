@@ -1,4 +1,4 @@
-# .spacemacs.d
+# Spacemacs setup
 
 ## Emacs Requirerments 
 ```bash
