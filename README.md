@@ -1,5 +1,11 @@
 # .spacemacs.d
 
+## Emacs Requirerments 
+```bash
+sudo apt-get install build-essential texinfo-doc-nonfree install-info info libx11-dev libxpm-dev libjpeg-dev libpng-dev libgif-dev libtiff-dev libgtk2.0-dev libncurses5-dev libxpm-dev automake autoconf libgnutls28-dev texinfo
+```
+
+
 ## Layer config
 ```lisp
      csv
