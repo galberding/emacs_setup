@@ -1,4 +1,4 @@
-# Spacemacs setup
+# Spacemacs setup on Ubuntu
 
 ## Emacs Requirerments
 ```bash
@@ -9,6 +9,14 @@ sudo apt-get install build-essential texinfo-doc-nonfree install-info info libx1
 
 ```bash
 ./build_emacs27.sh
+```
+
+## Spacemacs setup
+
+```
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+cd  ~/.emacs.d
+git checkout develop # otherwise some packages below will not work
 ```
 
 ## Layer config
@@ -25,10 +33,7 @@ sudo apt-get install build-essential texinfo-doc-nonfree install-info info libx1
      helm
 
      lsp
-     ;; markdown
      (multiple-cursors :variables multiple-cursors-backend 'mc)
-
-     ;; (c-c++ :variables c-c++-backend 'rtags)
      (c-c++ :variables c-c++-backend 'lsp-clangd
             c-c++-enable-clang-support t
             c-c++-enable-clang-format-on-save t
@@ -42,7 +47,6 @@ sudo apt-get install build-essential texinfo-doc-nonfree install-info info libx1
      spell-checking
      syntax-checking
      version-control
-     ;; sonicpi
      treemacs
      (ranger :variables
              ranger-show-preview t)
@@ -51,13 +55,25 @@ sudo apt-get install build-essential texinfo-doc-nonfree install-info info libx1
 
 ## Shortcuts
 ```lisp
+  ;; Switching between windows
   (global-set-key (kbd "S-M-<left>")  'windmove-left)
   (global-set-key (kbd "S-M-<right>") 'windmove-right)
   (global-set-key (kbd "S-M-<up>")    'windmove-up)
   (global-set-key (kbd "S-M-<down>")  'windmove-down)
 
-  ;; Multicursor
+  ;; Multicursor mark next/previos
   (global-set-key (kbd "C-s-n") 'mc/mark-next-like-this)
   (global-set-key (kbd "C-s-p") 'mc/mark-previous-like-this)
 
 ```
+
+## LSP - Clangd setup
+* [C/C++ Layer](https://develop.spacemacs.org/layers/+lang/c-c++/README.html)
+
+```bash
+sudo apt install bear # https://github.com/rizsotto/Bear
+sudo apt install clangd
+```
+
+## LSP - Python
+* [Python Layer](https://develop.spacemacs.org/layers/+lang/python/README.html)
