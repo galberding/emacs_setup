@@ -77,3 +77,8 @@ sudo apt install clangd
 
 ## LSP - Python
 * [Python Layer](https://develop.spacemacs.org/layers/+lang/python/README.html)
+* Install LSP:
+```bash
+pip install python-language-server[all] importmagic epc pyls-isort pyls-mypy pyls-black
+```
+
