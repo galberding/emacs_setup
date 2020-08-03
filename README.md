@@ -11,7 +11,7 @@ sudo apt-get install build-essential texinfo-doc-nonfree install-info info libx1
 ./build_emacs27.sh
 # Add emacs installation to path
 echo "export PATH=$(pwd)/emacs/emacs-27/bin:\$PATH" >> ~/.bashrc
-source .bashrc
+source ~/.bashrc
 ```
 
 ## Spacemacs setup
