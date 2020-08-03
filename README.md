@@ -14,7 +14,7 @@ echo "export PATH=$(pwd)/emacs/emacs-27/bin:\$PATH" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-## Spacemacs setup
+## [Spacemacs](https://www.spacemacs.org/) setup
 
 ```
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
@@ -23,7 +23,15 @@ git checkout develop # otherwise some packages below will not work
 ```
 
 ## Layer config
+
+* Start Emacs 
+* Open the Configuration (`M-m f e d`)
+* Insert/replace content of `dotspacemacs-configuration-layers'()`
+* Reload configuration (`M-m f e R`)
+
 ```lisp
+dotspacemacs-configuration-layers
+   '(
      csv
      javascript
      markdown
@@ -54,10 +62,12 @@ git checkout develop # otherwise some packages below will not work
      (ranger :variables
              ranger-show-preview t)
      major-modes
+)
 ```
 
 ## Shortcuts
 ```lisp
+(defun dotspacemacs/user-config ()
   ;; Switching between windows
   (global-set-key (kbd "S-M-<left>")  'windmove-left)
   (global-set-key (kbd "S-M-<right>") 'windmove-right)
@@ -67,6 +77,7 @@ git checkout develop # otherwise some packages below will not work
   ;; Multicursor mark next/previos
   (global-set-key (kbd "C-s-n") 'mc/mark-next-like-this)
   (global-set-key (kbd "C-s-p") 'mc/mark-previous-like-this)
+)
 
 ```
 
