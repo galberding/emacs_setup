@@ -1,5 +1,19 @@
 # Spacemacs setup on Ubuntu
 
+- [Spacemacs setup on Ubuntu](#spacemacs-setup-on-ubuntu)
+  * [Emacs Requirerments](#emacs-requirerments)
+  * [Build emacs27](#build-emacs27)
+  * [[Spacemacs](https://www.spacemacs.org/) setup](#-spacemacs--https---wwwspacemacsorg---setup)
+  * [Layer config](#layer-config)
+  * [Shortcuts](#shortcuts)
+  * [LSP - Clangd setup](#lsp---clangd-setup)
+    + [Compile clangd from sources](#compile-clangd-from-sources)
+  * [LSP - Python](#lsp---python)
+  * [Update Ubuntu and Spacemacs](#update-ubuntu-and-spacemacs)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 ## Emacs Requirerments
 ```bash
 sudo apt-get install build-essential texinfo-doc-nonfree install-info info libx11-dev libxpm-dev libjpeg-dev libpng-dev libgif-dev libtiff-dev libgtk2.0-dev libncurses5-dev libxpm-dev automake autoconf libgnutls28-dev texinfo
