@@ -1,0 +1,7 @@
+#!/bin/bash
+sudo apt -y update
+sudo apt -y dist-upgrade
+
+cd ~/.emacs.d
+git pull
+cd 
