@@ -37,7 +37,10 @@ dotspacemacs-configuration-layers
      markdown
      python
      semantic
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-sort-by-usage t)
      better-defaults
      emacs-lisp
      git
