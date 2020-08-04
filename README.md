@@ -92,6 +92,24 @@ sudo apt install bear # https://github.com/rizsotto/Bear
 sudo apt install clangd
 ```
 
+### Compile clangd from sources 
+* Dependencies: CMake >= 3.18 
+```bash
+mkdir cmake && cd cmake
+wget https://github.com/Kitware/CMake/releases/download/v3.18.1/cmake-3.18.1-Linux-x86_64.sh
+chmod +x cmake-3.18.1-Linux-x86_64.sh
+cd bin
+echo "export PATH=$(pwd):\$PATH" >> ~/.bashrc
+source ~/.bashrc
+```
+* All other dependencies should be in place after building emacs
+```bash
+./build_clangd.sh
+cd llvm-project/clangd/bin
+echo "export PATH=$(pwd):\$PATH" >> ~/.bashrc
+source ~/.bashrc
+```
+
 ## LSP - Python
 * [Python Layer](https://develop.spacemacs.org/layers/+lang/python/README.html)
 * Install LSP:
