@@ -3,7 +3,7 @@
 - [Spacemacs setup on Ubuntu](#spacemacs-setup-on-ubuntu)
   * [Emacs Requirerments](#emacs-requirerments)
   * [Build emacs27](#build-emacs27)
-  * [[Spacemacs](https://www.spacemacs.org/) setup](#-spacemacs--https---wwwspacemacsorg---setup)
+  * [Spacemacs setup](#spacemacs-setup)
   * [Layer config](#layer-config)
   * [Shortcuts](#shortcuts)
   * [LSP - Clangd setup](#lsp---clangd-setup)
