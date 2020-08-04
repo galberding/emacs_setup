@@ -9,10 +9,12 @@ sudo apt-get install build-essential texinfo-doc-nonfree install-info info libx1
 
 ```bash
 ./build_emacs27.sh
-echo "export $PATH=$PATH:$(pwd)emacs/emacs-27/bin"
+# Add emacs installation to path
+echo "export PATH=$(pwd)/emacs/emacs-27/bin:\$PATH" >> ~/.bashrc
+source ~/.bashrc
 ```
 
-## Spacemacs setup
+## [Spacemacs](https://www.spacemacs.org/) setup
 
 ```
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
@@ -21,7 +23,15 @@ git checkout develop # otherwise some packages below will not work
 ```
 
 ## Layer config
+
+* Start Emacs
+* Open the Configuration (`M-m f e d`)
+* Insert/replace content of `dotspacemacs-configuration-layers'()`
+* Reload configuration (`M-m f e R`)
+
 ```lisp
+dotspacemacs-configuration-layers
+   '(
      csv
      javascript
      markdown
@@ -52,10 +62,12 @@ git checkout develop # otherwise some packages below will not work
      (ranger :variables
              ranger-show-preview t)
      major-modes
+)
 ```
 
 ## Shortcuts
 ```lisp
+(defun dotspacemacs/user-config ()
   ;; Switching between windows
   (global-set-key (kbd "S-M-<left>")  'windmove-left)
   (global-set-key (kbd "S-M-<right>") 'windmove-right)
@@ -65,6 +77,7 @@ git checkout develop # otherwise some packages below will not work
   ;; Multicursor mark next/previos
   (global-set-key (kbd "C-s-n") 'mc/mark-next-like-this)
   (global-set-key (kbd "C-s-p") 'mc/mark-previous-like-this)
+)
 
 ```
 
@@ -78,3 +91,13 @@ sudo apt install clangd
 
 ## LSP - Python
 * [Python Layer](https://develop.spacemacs.org/layers/+lang/python/README.html)
+* Install LSP:
+```bash
+pip install python-language-server[all] importmagic epc pyls-isort pyls-mypy pyls-black
+```
+## Update Ubuntu and Spacemacs
+* Add this script to `~/bin` for easy access
+* Script will perform update, dist-upgrade and pull the latest changes of develop
+```
+./sysupdate
+```
