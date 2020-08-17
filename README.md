@@ -4,6 +4,8 @@
   * [Emacs Requirerments](#emacs-requirerments)
   * [Build emacs27](#build-emacs27)
   * [Spacemacs setup](#spacemacs-setup)
+    + [Quick Setup (TODO: Needs to be tested!)](#Quick-Setup)
+    + [Spacemacs Setup](#Spacemacs-Setup)
   * [Layer config](#layer-config)
   * [Shortcuts](#shortcuts)
   * [LSP - Clangd setup](#lsp---clangd-setup)
@@ -29,6 +31,14 @@ source ~/.bashrc
 ```
 
 ## [Spacemacs](https://www.spacemacs.org/) setup
+
+### Quick setup
+* Use predefined configfile `.spacemacs` to setup layer config and shortcuts
+
+```
+./setup_spacemacs.sh
+```
+### Spacemacs setup
 
 ```
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
@@ -106,8 +116,8 @@ sudo apt install bear # https://github.com/rizsotto/Bear
 sudo apt install clangd
 ```
 
-### Compile clangd from sources 
-* Dependencies: CMake >= 3.18 
+### Compile clangd from sources
+* Dependencies: CMake >= 3.18
 ```bash
 mkdir cmake && cd cmake
 wget https://github.com/Kitware/CMake/releases/download/v3.18.1/cmake-3.18.1-Linux-x86_64.sh
