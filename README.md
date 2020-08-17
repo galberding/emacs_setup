@@ -33,6 +33,7 @@ source ~/.bashrc
 ## [Spacemacs](https://www.spacemacs.org/) setup
 
 ### Quick setup
+* Clone Spacemacs
 * Use predefined configfile `.spacemacs` to setup layer config and shortcuts
 
 ```
