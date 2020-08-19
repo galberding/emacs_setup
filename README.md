@@ -72,7 +72,7 @@ dotspacemacs-configuration-layers
      git
      helm
 
-     lsp
+     (lsp :variables lsp-ui-doc-enable nil)
      (multiple-cursors :variables multiple-cursors-backend 'mc)
      (c-c++ :variables c-c++-backend 'lsp-clangd
             c-c++-enable-clang-support t
