@@ -63,6 +63,7 @@ dotspacemacs-configuration-layers
      python
      semantic
      (auto-completion :variables
+                      auto-completion-use-company-box t
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t)
