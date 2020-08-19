@@ -147,7 +147,7 @@ chmod +x Miniconda3-latest-Linux-x86_64.sh
 * [Python Layer](https://develop.spacemacs.org/layers/+lang/python/README.html)
 * Install LSP:
 ```bash
-pip install python-language-server[all] pylint importmagic epc pyls-isort pyls-mypy pyls-black
+pip install python-language-server[all] pylint importmagic epc pyls-isort pyls-mypy pyls-black ipython
 ```
 ## Update Ubuntu and Spacemacs
 * Add this script to `~/bin` for easy access
