@@ -14,9 +14,12 @@
 (show-paren-mode 1)
 
 
+;; (set-face-attribute 'region nil :background "gray20")
+
 ;; highlight line with the cursor, preserving the colours.
 (global-hl-line-mode 1)
-(set-face-attribute 'hl-line nil :inherit nil :background "gray20")
+(set-face-attribute 'hl-line nil :inherit nil :background "gray10")
+(set-face-attribute 'region nil :inherit nil :background "dim gray" :foreground "#ffffff")
 
 (winner-mode t)
 
