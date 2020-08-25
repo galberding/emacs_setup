@@ -17,4 +17,9 @@
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-s") 'helm-occur)
+
+(define-prefix-command "space-map"  "M-m")
+
+;; git
+(global-set-key (kbd "M-m g s") 'magit-status)
+(global-set-key (kbd "M-m g c") 'magit-clone)
