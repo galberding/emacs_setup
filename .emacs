@@ -8,18 +8,14 @@
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-
 (column-number-mode)
 (global-linum-mode 1)
-(show-paren-mode 1)
 
 
 ;; (set-face-attribute 'region nil :background "gray20")
 
 ;; highlight line with the cursor, preserving the colours.
 (global-hl-line-mode 1)
-(set-face-attribute 'hl-line nil :inherit nil :background "gray10")
-(set-face-attribute 'region nil :inherit nil :background "dim gray" :foreground "#ffffff")
 
 (winner-mode t)
 
@@ -27,7 +23,7 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-(defvar package-path "~/Projects/emacs_setup/packages/")
+(defvar package-path "~/emacs_setup/packages/")
 
 (defun load-package (package-name)
   (load (concat package-path package-name))
@@ -37,13 +33,13 @@
 ;; Setup Repo and packages ----------------------------------------------------------------------------------------------------
 
 (require 'package)
-(setq package-list '(use-package multiple-cursors helm-ag))
+(setq package-list '(use-package multiple-cursors helm-ag pdf-tools))
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
 
 (package-initialize)
 
-; fetch the list of packages available 
+; fetch the list of packages available
 (unless package-archive-contents
   (package-refresh-contents))
 
@@ -64,7 +60,7 @@
 
 ;; Helm Config
 (use-package helm
-  :ensure t) 
+  :ensure t)
 (require 'helm-config)
 (setq helm-split-window-in-side-p t
       helm-move-to-line-cycle-in-source t)
@@ -73,6 +69,8 @@
 
 ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
 (setq lsp-keymap-prefix "M-RET")
+(setq lsp-signature-render-documentation nil)
+(setq lsp-ui-doc-enable nil)
 
 (use-package lsp-mode
   :ensure t
@@ -80,6 +78,7 @@
          (python-mode . lsp)
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration))
+  
   :commands lsp)
 
 ;; optionally
@@ -110,3 +109,24 @@
 ;; spell checking
 ;; closing brackets
 ;; outsource modules/packages for better structured config
+;; smart jump to beginning when indent
+;; highlight same words in buffer
+
+
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(electric-pair-mode t)
+ '(global-hl-line-mode t)
+ '(package-selected-packages
+   '(hl-todo pdf-tools helm-ag multi-term company lsp-ui lsp-mode helm which-key treemacs-persp treemacs-magit treemacs-icons-dired treemacs-projectile treemacs-evil use-package treemacs auto-complete)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(hl-line ((t (:extend t :background "#44475a" :weight normal))))
+ '(region ((t (:inherit match :extend t :background "SkyBlue4" :foreground "white smoke")))))

@@ -1,6 +1,36 @@
 
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil))) 
-(setq mouse-wheel-progressive-speed nil)
+(setq mouse-wheel-progressive-speed t)
+
+
+(setq show-paren-delay 0)           ; how long to wait?
+(show-paren-mode t)                 ; turn paren-mode on
+(setq show-paren-style 'parenthesis) ; alternatives are 'parenthesis' and 'mixed'
+
+
+(require 'paren)
+(set-face-background 'show-paren-match
+		     (face-background 'default))
+(set-face-foreground 'show-paren-match "#42FF4E")
+(set-face-attribute 'show-paren-match nil :weight 'extra-bold :underline t)
+
+
+
+;; Highlight keywords
+
+(use-package hl-todo
+       :ensure t
+       :custom-face
+       (hl-todo ((t (:inherit hl-todo :italic t))))
+       :hook ((prog-mode . hl-todo-mode)
+              (yaml-mode . hl-todo-mode)))
+
+(setq hl-todo-keyword-faces
+      '(("TODO"   . "#FF0000")
+        ("FIXME"  . "#FF0000")
+        ("DEBUG"  . "#A020F0")
+        ("GOTCHA" . "#FF4500")
+        ("STUB"   . "#1E90FF")))
 
 
 
@@ -47,4 +77,15 @@
 ;; PDF vierwer 
 (pdf-loader-install)
 (add-hook 'pdf-view-mode-hook (lambda() (linum-mode -1)))
+
+(defun duplicate-line()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (open-line 1)
+  (next-line 1)
+  (yank)
+  )
+
 
