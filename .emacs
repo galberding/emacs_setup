@@ -100,13 +100,6 @@
 (load-package "keymap.el")
 
 
-;; Add c++ lsp
-;; bookmarks
-;; buttom row infos
-;; spell checking
-;; smart jump to beginning when indent
-;; highlight same words in buffer
-
 
 
 (custom-set-variables

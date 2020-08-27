@@ -2,6 +2,6 @@
 sudo apt -y update
 sudo apt -y dist-upgrade
 
-cd ~/.emacs.d
+cd ~/emacs_setup
 git pull
-cd 
+cd

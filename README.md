@@ -3,6 +3,7 @@
 - [Spacemacs setup on Ubuntu](#spacemacs-setup-on-ubuntu)
   * [Emacs Requirerments](#emacs-requirerments)
   * [Build emacs27](#build-emacs27)
+  * [Bare Metal Emacs Config](bare-metal-emacs-config)
   * [Spacemacs setup](#spacemacs-setup)
     + [Quick Setup (TODO: Needs to be tested!)](#Quick-Setup)
     + [Spacemacs Setup](#Spacemacs-Setup)
@@ -29,6 +30,33 @@ sudo apt-get install build-essential texinfo-doc-nonfree install-info info libx1
 echo "export PATH=$(pwd)/emacs/emacs-27/bin:\$PATH" >> ~/.bashrc
 source ~/.bashrc
 ```
+
+## Bare Metal Emacs Config
+Due to the low speed of Spacemacs, I decided to directly configure emacs.
+* Get repo in place
+```
+git clone https://github.com/galberding/emacs_setup.git ~/emacs_setup
+ln -s $HOME/emacs_setup/.emacs $HOME/.emacs
+mv ~/.emacs.d ~/.emacs.d.backup
+```
+
+### TODO
+* Spellcheck
+* ~~Treemacs~~
+* ~~Helm~~
+* ~~Python LSP~~
+* c++ LSP
+* Multiterm (not yet as good as in spacemacs)
+* ~~Dashboard~~
+* Buttom row infos
+* Smart jump to 1st pos when indented
+* Highlight same words in buffer
+* ~~TODO highlight~~
+* ~~Leader Key~~
+* ~~Move line up/down~~
+* ~~Magit keybindings~~
+* ~~PDF viewer~~
+
 
 ## [Spacemacs](https://www.spacemacs.org/) setup
 
