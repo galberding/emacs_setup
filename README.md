@@ -3,7 +3,7 @@
 - [Spacemacs setup on Ubuntu](#spacemacs-setup-on-ubuntu)
   * [Emacs Requirerments](#emacs-requirerments)
   * [Build emacs27](#build-emacs27)
-  * [Bare Metal Emacs Config](bare-metal-emacs-config)
+  * [Bare Metal Emacs Config](#bare-metal-emacs-config)
   * [Spacemacs setup](#spacemacs-setup)
     + [Quick Setup (TODO: Needs to be tested!)](#Quick-Setup)
     + [Spacemacs Setup](#Spacemacs-Setup)
