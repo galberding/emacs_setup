@@ -78,7 +78,7 @@
          (python-mode . lsp)
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration))
-  
+
   :commands lsp)
 
 ;; optionally
@@ -99,16 +99,11 @@
 
 (load-package "keymap.el")
 
-;; Highlight todo
+
 ;; Add c++ lsp
 ;; bookmarks
-;; search in files (ag)
 ;; buttom row infos
-;; move lines up and down
-;; remove white space on save
 ;; spell checking
-;; closing brackets
-;; outsource modules/packages for better structured config
 ;; smart jump to beginning when indent
 ;; highlight same words in buffer
 
@@ -129,4 +124,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(hl-line ((t (:extend t :background "#44475a" :weight normal))))
+ '(hl-todo ((t (:inherit hl-todo :italic t))))
  '(region ((t (:inherit match :extend t :background "SkyBlue4" :foreground "white smoke")))))

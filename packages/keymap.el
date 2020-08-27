@@ -28,3 +28,6 @@
 ;; Duplicate line
 (global-set-key (kbd "M-RET d l") 'duplicate-line)
 ;; (global-set-key (kbd "M-m d l") 'duplicate-line)
+
+(global-set-key [(meta shift up)]  'move-line-up)
+(global-set-key [(meta shift down)]  'move-line-down)

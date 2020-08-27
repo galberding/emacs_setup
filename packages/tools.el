@@ -1,5 +1,4 @@
-
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil))) 
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
 (setq mouse-wheel-progressive-speed t)
 
 
@@ -32,9 +31,28 @@
         ("GOTCHA" . "#FF4500")
         ("STUB"   . "#1E90FF")))
 
+;; Remove Whitespace
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; Move line
+(defun move-line-up ()
+  "Move up the current line."
+  (interactive)
+  (transpose-lines 1)
+  (forward-line -2)
+  (indent-according-to-mode))
+
+(defun move-line-down ()
+  "Move down the current line."
+  (interactive)
+  (forward-line 1)
+  (transpose-lines 1)
+  (forward-line -1)
+  (indent-according-to-mode))
 
 
-;; dashboard
+
+;; Dashboard
 (use-package dashboard
   :ensure t
   :config
@@ -57,7 +75,7 @@
 	multi-term-dedicated-max-window-height 50
 	multi-term-dedicated-window t
 	)
-  
+
   )
 
 
@@ -74,7 +92,7 @@
   (multi-term)
   )
 
-;; PDF vierwer 
+;; PDF vierwer
 (pdf-loader-install)
 (add-hook 'pdf-view-mode-hook (lambda() (linum-mode -1)))
 
@@ -87,5 +105,3 @@
   (next-line 1)
   (yank)
   )
-
-
