@@ -58,6 +58,13 @@
   :config
   (dashboard-setup-startup-hook))
 
+;; New mode line
+(use-package spaceline
+  :config
+  (spaceline-emacs-theme)
+  (spaceline-helm-mode)
+  :ensure t)
+
 
 ;; optional if you want which-key integration
 (use-package which-key
