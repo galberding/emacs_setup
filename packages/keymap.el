@@ -44,4 +44,5 @@
 ;; Treemacs
 (define-key leader-map (kbd "f t") 'treemacs)
 
-;; Bookmarks
+;; Spell check
+(define-key leader-map (kbd "s") 'flyspell-correct-word-before-point)

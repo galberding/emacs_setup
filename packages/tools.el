@@ -75,6 +75,11 @@
     :config
     (which-key-mode))
 
+;; Spellchecking in Comments
+(use-package flyspell
+  :config
+  (add-hook 'prog-mode-hook #'flyspell-prog-mode))
+
 
 ;; Terminal:
 (use-package multi-term
