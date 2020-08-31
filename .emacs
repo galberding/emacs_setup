@@ -93,6 +93,13 @@
   :init
   (add-hook 'after-init-hook 'global-company-mode))
 
+
+(setq ccls-executable "~/emacs_setup/ccls/install/bin/ccls")
+(use-package ccls
+  :ensure t
+  :hook ((c-mode c++-mode objc-mode cuda-mode) .
+         (lambda () (require 'ccls) (lsp))))
+
 (load-package "treemacs.el")
 
 (load-package "tools.el")

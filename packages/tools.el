@@ -31,6 +31,9 @@
         ("GOTCHA" . "#FF4500")
         ("STUB"   . "#1E90FF")))
 
+(use-package org
+  :ensure t)
+
 ;; Remove Whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
