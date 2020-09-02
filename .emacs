@@ -66,6 +66,15 @@
       helm-move-to-line-cycle-in-source t)
 (helm-mode 1)
 
+(use-package yasnippet
+  :config
+  (add-to-list 'load-path
+               "~/.emacs.d/plugins/yasnippet")
+  (yas-global-mode 1)
+  :ensure t)
+
+(use-package yasnippet-snippets
+  :ensure t)
 
 ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
 (setq lsp-keymap-prefix "M-RET")
@@ -93,6 +102,17 @@
   :init
   (add-hook 'after-init-hook 'global-company-mode))
 
+(defvar company-mode/enable-yas t
+  "Enable yasnippet for all backends.")
+
+(defun company-mode/backend-with-yas (backend)
+  (if (or (not company-mode/enable-yas) (and (listp backend) (member 'company-yasnippet backend)))
+      backend
+    (append (if (consp backend) backend (list backend))
+            '(:with company-yasnippet))))
+
+(setq company-backends (mapcar #'company-mode/backend-with-yas company-backends))
+
 
 (setq ccls-executable "~/emacs_setup/ccls/install/bin/ccls")
 (use-package ccls
@@ -114,10 +134,19 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(company-clang-use-compile-flags-txt t)
+ '(company-dabbrev-code-everywhere t)
+ '(company-dabbrev-code-ignore-case t)
+ '(company-dabbrev-minimum-length 3)
+ '(company-dabbrev-time-limit 0.2)
+ '(company-etags-everywhere nil)
+ '(company-minimum-prefix-length 2)
+ '(company-tooltip-idle-delay 0.3)
  '(electric-pair-mode t)
+ '(global-company-mode t)
  '(global-hl-line-mode t)
  '(package-selected-packages
-   '(spaceline spaceline-config hl-todo pdf-tools helm-ag multi-term company lsp-ui lsp-mode helm which-key treemacs-persp treemacs-magit treemacs-icons-dired treemacs-projectile treemacs-evil use-package treemacs auto-complete)))
+   '(yasnippet-snippets yasnippet jupyter ein spaceline spaceline-config hl-todo pdf-tools helm-ag multi-term company lsp-ui lsp-mode helm which-key treemacs-persp treemacs-magit treemacs-icons-dired treemacs-projectile treemacs-evil use-package treemacs auto-complete)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
