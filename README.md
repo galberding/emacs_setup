@@ -1,4 +1,4 @@
-# Spacemacs setup on Ubuntu
+# (Spac)/Emacs setup on Ubuntu
 
 - [Spacemacs setup on Ubuntu](#spacemacs-setup-on-ubuntu)
   * [Emacs Requirerments](#emacs-requirerments)
