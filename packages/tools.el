@@ -107,9 +107,9 @@
   (multi-term)
   )
 
-;; PDF vierwer
-(pdf-loader-install)
-(add-hook 'pdf-view-mode-hook (lambda() (linum-mode -1)))
+;; ;; PDF vierwer
+;; (pdf-loader-install)
+;; (add-hook 'pdf-view-mode-hook (lambda() (linum-mode -1)))
 
 (defun duplicate-line()
   (interactive)
@@ -119,4 +119,19 @@
   (open-line 1)
   (next-line 1)
   (yank)
+  )
+
+(use-package tex
+  :defer t
+  :ensure auctex
+  :config
+  (setq TeX-auto-save t)
+  (setq TeX-parse-self t)
+  )
+
+
+(use-package latex-preview-pane
+  :ensure t
+  :config
+  (latex-preview-pane-enable)
   )
