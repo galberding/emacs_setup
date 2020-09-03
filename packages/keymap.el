@@ -19,8 +19,8 @@
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
 ;; shell
-(global-set-key (kbd "M-RET t") 'multi-term-open-split-buffer)
-(define-key action-map (kbd "t") ''multi-term-open-split-buffer)
+;;(global-set-key (kbd "M-RET t") 'multi-term-open-split-buffer)
+(define-key leader-map (kbd "'") 'multi-term-dedicated-toggle)
 
 ;; Replace buffer list
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
@@ -38,6 +38,7 @@
 ;; (global-set-key (kbd "M-RET d l") 'duplicate-line)
 (define-key leader-map (kbd "l d") 'duplicate-line)
 
+;; Move line
 (global-set-key [(meta shift up)]  'move-line-up)
 (global-set-key [(meta shift down)]  'move-line-down)
 
@@ -46,3 +47,6 @@
 
 ;; Spell check
 (define-key leader-map (kbd "s") 'flyspell-correct-word-before-point)
+
+;; Latex preview window
+(define-key leader-map (kbd "p l") 'latex-preview-pane)
