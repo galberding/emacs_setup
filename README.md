@@ -41,22 +41,22 @@ mv ~/.emacs.d ~/.emacs.d.backup
 ```
 
 ### TODO
-* ~~Spellcheck~~ (M-m s -> correct word before point)
-* ~~Treemacs~~ (M-m f t)
+* ~~Spellcheck~~ (`M-m s` -> correct word before point)
+* ~~Treemacs~~ (`M-m f t`)
 * ~~Helm~~
 * ~~Python LSP~~
 * ~~c++ LSP~~
-* ~~Multiterm (not yet as good as in spacemacs)~~ (M-m ')
+* ~~Multiterm (not yet as good as in spacemacs)~~ (`M-m '`)
 * ~~Dashboard~~
 * ~~Buttom row infos~~
 * Smart jump to 1st pos when indented
 * Highlight same words in buffer
 * ~~TODO highlight~~
-* ~~Leader Key~~ (M-m)
-* ~~Move line up/down~~ (M-S-UP/DOWN -> Move Selected line )
-* ~~Magit keybindings~~ (M-m g s -> git status | M-m g c -> git clone)
+* ~~Leader Key~~ (`M-m`)
+* ~~Move line up/down~~ (`M-S-UP/DOWN` -> Move Selected line )
+* ~~Magit keybindings~~ (`M-m g s` -> git status | `M-m g c` -> git clone)
 * ~~PDF viewer~~ (TODO: currently not installable without sudo -> need setup script)
-* ~~LateX env~~ (M-m p l -> Preview latex )
+* ~~LateX env~~ (`M-m p l` -> Preview latex )
 
 
 ## [Spacemacs](https://www.spacemacs.org/) setup

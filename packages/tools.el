@@ -121,6 +121,8 @@
   (yank)
   )
 
+
+;; Latex packages
 (use-package tex
   :defer t
   :ensure auctex
