@@ -49,4 +49,4 @@
 (define-key leader-map (kbd "s") 'flyspell-correct-word-before-point)
 
 ;; Latex preview window
-(define-key leader-map (kbd "p l") 'latex-preview-pane)
+(define-key leader-map (kbd "p l") 'latex-preview-pane-mode)
