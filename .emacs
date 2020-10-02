@@ -101,6 +101,9 @@
   :ensure t
   :init
   (add-hook 'after-init-hook 'global-company-mode))
+;; (define-key company-active-map (kbd "TAB") 'company-complete-common-or-cycle)
+(define-key company-active-map [tab] 'company-complete-common-or-cycle)
+(define-key company-active-map (kbd "TAB") 'company-complete-common-or-cycle)
 
 (defvar company-mode/enable-yas t
   "Enable yasnippet for all backends.")
@@ -146,7 +149,7 @@
  '(global-company-mode t)
  '(global-hl-line-mode t)
  '(package-selected-packages
-   '(latex-preview-pane preview-latex auctex yasnippet-snippets yasnippet jupyter ein spaceline spaceline-config hl-todo pdf-tools helm-ag multi-term company lsp-ui lsp-mode helm which-key treemacs-persp treemacs-magit treemacs-icons-dired treemacs-projectile treemacs-evil use-package treemacs auto-complete)))
+   '(crux latex-preview-pane preview-latex auctex yasnippet-snippets yasnippet jupyter ein spaceline spaceline-config hl-todo pdf-tools helm-ag multi-term company lsp-ui lsp-mode helm which-key treemacs-persp treemacs-magit treemacs-icons-dired treemacs-projectile treemacs-evil use-package treemacs auto-complete)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

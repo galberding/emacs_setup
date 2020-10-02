@@ -111,6 +111,7 @@
 ;; (pdf-loader-install)
 ;; (add-hook 'pdf-view-mode-hook (lambda() (linum-mode -1)))
 
+
 (defun duplicate-line()
   (interactive)
   (move-beginning-of-line 1)
@@ -137,3 +138,21 @@
   :config
   (latex-preview-pane-enable)
   )
+
+;; (use-package elpy
+;;   :ensure t
+;;   :init
+;;   (elpy-enable))
+
+(require 'doc-view)
+(defcustom doc-view-pdfdraw-program
+  (cond
+   ((executable-find "pdfdraw") "pdfdraw")
+   (t "mutool draw"))
+  "Name of MuPDF's program to convert PDF files to PNG."
+  )
+
+;; (setq doc-view-pdfdraw-program "/homes/galberding/emacs_setup/pdfview/bin/mutool draw")
+(unless (package-installed-p 'crux)
+  (package-refresh-contents)
+  (package-install 'crux))
