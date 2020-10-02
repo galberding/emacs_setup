@@ -137,3 +137,7 @@
   :config
   (latex-preview-pane-enable)
   )
+
+
+(use-package platformio-mode
+  :ensure t)
