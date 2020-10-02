@@ -26,7 +26,7 @@
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-s") 'helm-occur)
+(global-set-key (kbd "M-s") 'helm-occur)
 
 ;; (define-prefix-command "space-map"  "M-m")
 
@@ -50,3 +50,14 @@
 
 ;; Latex preview window
 (define-key leader-map (kbd "p l") 'latex-preview-pane-mode)
+
+;; Search
+(define-key leader-map (kbd "S") 'helm-ag)
+
+;; crux
+(global-set-key [remap move-beginning-of-line] #'crux-move-beginning-of-line)
+(global-set-key (kbd "C-c o") #'crux-open-with)
+(global-set-key [(shift return)] #'crux-smart-open-line)
+(global-set-key (kbd "s-r") #'crux-recentf-find-file)
+(global-set-key (kbd "C-<backspace>") #'crux-kill-line-backwards)
+(global-set-key [remap kill-whole-line] #'crux-kill-whole-line)
