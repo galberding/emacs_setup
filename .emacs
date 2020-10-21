@@ -130,6 +130,10 @@
 (load-package "keymap.el")
 
 
+(add-to-list 'load-path "/opt/ros/kinetic/share/emacs/site-lisp")
+;; or whatever your install space is + "/share/emacs/site-lisp"
+(require 'rosemacs-config)
+
 
 
 (custom-set-variables
@@ -149,7 +153,7 @@
  '(global-company-mode t)
  '(global-hl-line-mode t)
  '(package-selected-packages
-   '(crux latex-preview-pane preview-latex auctex yasnippet-snippets yasnippet jupyter ein spaceline spaceline-config hl-todo pdf-tools helm-ag multi-term company lsp-ui lsp-mode helm which-key treemacs-persp treemacs-magit treemacs-icons-dired treemacs-projectile treemacs-evil use-package treemacs auto-complete)))
+   '(cmake-mode crux latex-preview-pane preview-latex auctex yasnippet-snippets yasnippet jupyter ein spaceline spaceline-config hl-todo pdf-tools helm-ag multi-term company lsp-ui lsp-mode helm which-key treemacs-persp treemacs-magit treemacs-icons-dired treemacs-projectile treemacs-evil use-package treemacs auto-complete)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
