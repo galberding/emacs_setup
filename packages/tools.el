@@ -139,6 +139,10 @@
   (latex-preview-pane-enable)
   )
 
+
+(use-package platformio-mode
+  :ensure t)
+
 ;; (use-package elpy
 ;;   :ensure t
 ;;   :init
@@ -156,3 +160,15 @@
 (unless (package-installed-p 'crux)
   (package-refresh-contents)
   (package-install 'crux))
+
+
+;; Org mode
+(use-package cdlatex
+  :ensure t
+  :config
+  (setq cdlatex-env-alist
+     '(("axiom" "\\begin{axiom}\nAUTOLABEL\n?\n\\end{axiom}\n" nil)
+       ("theorem" "\\begin{theorem}\nAUTOLABEL\n?\n\\end{theorem}\n" nil)))
+  (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
+
+  )
