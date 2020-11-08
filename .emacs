@@ -130,9 +130,9 @@
 (load-package "keymap.el")
 
 
-(add-to-list 'load-path "/opt/ros/kinetic/share/emacs/site-lisp")
-;; or whatever your install space is + "/share/emacs/site-lisp"
-(require 'rosemacs-config)
+;; (add-to-list 'load-path "/opt/ros/kinetic/share/emacs/site-lisp")
+;; ;; or whatever your install space is + "/share/emacs/site-lisp"
+;; (require 'rosemacs-config)
 
 
 
