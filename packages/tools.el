@@ -172,3 +172,5 @@
   (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
 
   )
+(require 'srefactor)
+(semantic-mode 1)

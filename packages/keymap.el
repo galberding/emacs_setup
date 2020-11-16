@@ -61,3 +61,7 @@
 (global-set-key (kbd "s-r") #'crux-recentf-find-file)
 (global-set-key (kbd "C-<backspace>") #'crux-kill-line-backwards)
 (global-set-key [remap kill-whole-line] #'crux-kill-whole-line)
+
+
+;; Srefactor
+(define-key action-map "r p" 'srefactor-refactor-at-point)
