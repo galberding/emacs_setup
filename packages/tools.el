@@ -42,6 +42,12 @@
 (setq org-plantuml-jar-path
       (expand-file-name "~/Downloads/plantuml.jar"))
 
+(setq plantuml-jar-path "~/Downloads/plantuml.jar")
+(setq plantuml-default-exec-mode 'jar)
+
+(use-package plantuml-mode
+  :ensure t)
+
 ;; Remove Whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
