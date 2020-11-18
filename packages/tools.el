@@ -186,5 +186,9 @@
   (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
 
   )
+
+(use-package srefactor
+  :ensure t)
+
 (require 'srefactor)
 (semantic-mode 1)
