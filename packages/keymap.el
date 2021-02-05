@@ -42,11 +42,11 @@
 (global-set-key [(meta shift up)]  'move-line-up)
 (global-set-key [(meta shift down)]  'move-line-down)
 
-;; Treemacs
+;; File Tree (Treenacs)
 (define-key leader-map (kbd "f t") 'treemacs)
 
-;; Spell check
-(define-key leader-map (kbd "s") 'flyspell-correct-word-before-point)
+;; File Spell check (flyspell)
+(define-key leader-map (kbd "f s") 'flyspell-correct-word-before-point)
 
 ;; Latex preview window
 (define-key leader-map (kbd "p l") 'latex-preview-pane-mode)
@@ -64,4 +64,7 @@
 
 
 ;; Srefactor
-(define-key action-map "r p" 'srefactor-refactor-at-point)
+(define-key leader-map "s r" 'srefactor-refactor-at-point)
+
+;;
+(define-key leader-map "yi" 'yas-insert-snippet)
