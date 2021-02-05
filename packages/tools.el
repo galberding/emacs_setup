@@ -122,8 +122,8 @@
   )
 
 ;; ;; PDF vierwer
-;; (pdf-loader-install)
-;; (add-hook 'pdf-view-mode-hook (lambda() (linum-mode -1)))
+(pdf-loader-install)
+(add-hook 'pdf-view-mode-hook (lambda() (linum-mode -1)))
 
 
 (defun duplicate-line()
@@ -192,3 +192,19 @@
 
 (require 'srefactor)
 (semantic-mode 1)
+
+;; Spell checker
+(use-package flycheck
+  :ensure t)
+
+
+(flycheck-define-checker proselint
+  "A linter for prose."
+  :command ("proselint" source-inplace)
+  :error-patterns
+  ((warning line-start (file-name) ":" line ":" column ": "
+	    (id (one-or-more (not (any " "))))
+	    (message) line-end))
+  :modes (text-mode markdown-mode gfm-mode org-mode))
+
+(add-to-list 'flycheck-checkers 'proselint)
