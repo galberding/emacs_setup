@@ -12,6 +12,11 @@
 (global-linum-mode 1)
 
 
+;; (Info-find-node "emacs" "Auto Save Control")
+;; (use-package focus-autosave-mode
+;;   :config (focus-autosave-mode 1))
+
+;; (auto-save-visited-mode t)
 ;; (set-face-attribute 'region nil :background "gray20")
 
 ;; highlight line with the cursor, preserving the colours.
@@ -141,6 +146,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(auto-save-file-name-transforms '(("\\`/[^/]*:\\([^/]*/\\)*\\([^/]*\\)\\'" "/tmp/\\2" nil)))
+ '(auto-save-timeout 5)
+ '(auto-save-visited-file-name t)
+ '(auto-save-visited-mode t)
  '(company-clang-use-compile-flags-txt t)
  '(company-dabbrev-code-everywhere t)
  '(company-dabbrev-code-ignore-case t)
