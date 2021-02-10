@@ -65,7 +65,7 @@
 
 (use-package spacemacs-common
     :ensure spacemacs-theme
-    :config (load-theme 'spacemacs-light t))
+    :config (load-theme 'spacemacs-dark t))
 
 ;; Helm Config
 (use-package helm
@@ -199,3 +199,8 @@
  ;; If there is more than one, they won't work right.
  '(hl-todo ((t (:inherit hl-todo :italic t))))
  '(region ((t (:inherit match :extend t :background "SkyBlue4" :foreground "white smoke")))))
+
+;; Mode hooks:
+(add-hook 'org-mode-hook 'turn-on-flyspell)
+;; (add-hook 'latex-mode-hook 'turn-on-flyspell)
+(add-hook 'LaTeX-mode-hook #'turn-on-flyspell)
