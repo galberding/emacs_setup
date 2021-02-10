@@ -143,7 +143,10 @@
 ;; ;; or whatever your install space is + "/share/emacs/site-lisp"
 ;; (require 'rosemacs-config)
 
-
+;; Mode hooks:
+(add-hook 'org-mode-hook 'turn-on-flyspell)
+;; (add-hook 'latex-mode-hook 'turn-on-flyspell)
+(add-hook 'LaTeX-mode-hook #'turn-on-flyspell)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -199,8 +202,3 @@
  ;; If there is more than one, they won't work right.
  '(hl-todo ((t (:inherit hl-todo :italic t))))
  '(region ((t (:inherit match :extend t :background "SkyBlue4" :foreground "white smoke")))))
-
-;; Mode hooks:
-(add-hook 'org-mode-hook 'turn-on-flyspell)
-;; (add-hook 'latex-mode-hook 'turn-on-flyspell)
-(add-hook 'LaTeX-mode-hook #'turn-on-flyspell)
