@@ -144,9 +144,11 @@
 ;; (require 'rosemacs-config)
 
 ;; Mode hooks:
+(add-hook 'text-mode-hook 'turn-on-flyspell)
 (add-hook 'org-mode-hook 'turn-on-flyspell)
 ;; (add-hook 'latex-mode-hook 'turn-on-flyspell)
 (add-hook 'LaTeX-mode-hook #'turn-on-flyspell)
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
