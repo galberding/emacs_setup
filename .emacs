@@ -11,6 +11,10 @@
 (column-number-mode)
 (global-linum-mode 1)
 
+;; (require 'git-gutter)
+;; If you enable global minor mode
+;; (global-git-gutter-mode Nil)
+(projectile-mode +1)
 
 ;; (Info-find-node "emacs" "Auto Save Control")
 ;; (use-package focus-autosave-mode
@@ -62,10 +66,11 @@
 ;;   (load-theme 'dracula t)
 ;;   :ensure t)
 
+(load-theme 'tsdh-light t)
 
-(use-package spacemacs-common
-    :ensure spacemacs-theme
-    :config (load-theme 'spacemacs-dark t))
+;; (use-package spacemacs-common
+;;     :ensure spacemacs-theme
+;;     :config (load-theme 'spacemacs-light t))
 
 ;; Helm Config
 (use-package helm
@@ -175,6 +180,10 @@
  '(fci-rule-color "#BBBBBB")
  '(global-company-mode t)
  '(global-hl-line-mode t)
+ '(helm-adaptive-mode t nil (helm-adaptive))
+ '(helm-ag-fuzzy-match t)
+ '(helm-ag-use-temp-buffer t)
+ '(helm-follow-mode-persistent t)
  '(hl-todo-keyword-faces
    '(("TODO" . "#dc752f")
      ("NEXT" . "#dc752f")
@@ -191,11 +200,13 @@
      ("FIXME" . "#dc752f")
      ("XXX+" . "#dc752f")
      ("\\?\\?\\?+" . "#dc752f")))
+ '(lsp-file-watch-ignored-directories
+   '("[/\\\\]\\.git$" "[/\\\\]\\.hg$" "[/\\\\]\\.bzr$" "[/\\\\]_darcs$" "[/\\\\]\\.svn$" "[/\\\\]_FOSSIL_$" "[/\\\\]\\.idea$" "[/\\\\]\\.ensime_cache$" "[/\\\\]\\.eunit$" "[/\\\\]node_modules$" "[/\\\\]\\.fslckout$" "[/\\\\]\\.tox$" "[/\\\\]\\.stack-work$" "[/\\\\]\\.bloop$" "[/\\\\]\\.metals$" "[/\\\\]target$" "[/\\\\]\\.ccls-cache$" "[/\\\\]\\.deps$" "[/\\\\]build-aux$" "[/\\\\]autom4te.cache$" "[/\\\\]\\.reference$" "[/\\\\]gSearch$"))
  '(org-format-latex-options
    '(:foreground default :background default :scale 2.0 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
 		 ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(package-selected-packages
-   '(spacemacs-theme solarized-theme hemisu-theme hemisu-light-theme espresso-theme leuven-theme anti-zenburn-theme flycheck flychecker plantuml-mode srefactor cmake-mode magit-todos crux latex-preview-pane preview-latex auctex yasnippet-snippets yasnippet jupyter ein spaceline spaceline-config hl-todo pdf-tools helm-ag multi-term company lsp-ui lsp-mode helm which-key treemacs-persp treemacs-magit treemacs-icons-dired treemacs-projectile treemacs-evil use-package treemacs auto-complete))
+   '(helm-projectile markdown-preview-mode git-gutter golden-ratio langtool spacemacs-theme solarized-theme hemisu-theme hemisu-light-theme espresso-theme leuven-theme anti-zenburn-theme flycheck flychecker plantuml-mode srefactor cmake-mode magit-todos crux latex-preview-pane preview-latex auctex yasnippet-snippets yasnippet jupyter ein spaceline spaceline-config hl-todo pdf-tools helm-ag multi-term company lsp-ui lsp-mode helm which-key treemacs-persp treemacs-magit treemacs-icons-dired treemacs-projectile treemacs-evil use-package treemacs auto-complete))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

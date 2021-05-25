@@ -23,11 +23,13 @@
 (define-key leader-map (kbd "'") 'multi-term-dedicated-toggle)
 
 ;; Replace buffer list
-(global-set-key (kbd "C-x b") 'helm-buffers-list)
+;; (global-set-key (kbd "C-x b") 'helm-buffers-list)
+(global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "M-s") 'helm-occur)
-
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(global-set-key (kbd "C-c h g") 'helm-google-suggest)
 ;; (define-prefix-command "space-map"  "M-m")
 
 ;; ;; git
@@ -64,7 +66,10 @@
 
 
 ;; Srefactor
-(define-key leader-map "s r" 'srefactor-refactor-at-point)
+(define-key leader-map "sr" 'srefactor-refactor-at-point)
+(define-key leader-map "b" 'helm-projectile)
 
 ;;
 (define-key leader-map "yi" 'yas-insert-snippet)
+
+(define-key leader-map "P" 'projectile-command-map)
