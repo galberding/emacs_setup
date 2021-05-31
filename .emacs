@@ -156,6 +156,13 @@
 (add-hook 'LaTeX-mode-hook #'turn-on-flyspell)
 
 
+(when (require 'ansi-color nil t)
+  (setq compilation-environment '("TERM=xterm-256color"))
+  (defun my/advice-compilation-filter (f proc string)
+    (funcall f proc (xterm-color-filter string)))
+  (advice-add 'compilation-filter :around #'my/advice-compilation-filter))
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -210,7 +217,7 @@
    '(:foreground default :background default :scale 2.0 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
 		 ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(package-selected-packages
-   '(helm-projectile markdown-preview-mode git-gutter golden-ratio langtool spacemacs-theme solarized-theme hemisu-theme hemisu-light-theme espresso-theme leuven-theme anti-zenburn-theme flycheck flychecker plantuml-mode srefactor cmake-mode magit-todos crux latex-preview-pane preview-latex auctex yasnippet-snippets yasnippet jupyter ein spaceline spaceline-config hl-todo pdf-tools helm-ag multi-term company lsp-ui lsp-mode helm which-key treemacs-persp treemacs-magit treemacs-icons-dired treemacs-projectile treemacs-evil use-package treemacs auto-complete))
+   '(xterm-color helm-projectile markdown-preview-mode git-gutter golden-ratio langtool spacemacs-theme solarized-theme hemisu-theme hemisu-light-theme espresso-theme leuven-theme anti-zenburn-theme flycheck flychecker plantuml-mode srefactor cmake-mode magit-todos crux latex-preview-pane preview-latex auctex yasnippet-snippets yasnippet jupyter ein spaceline spaceline-config hl-todo pdf-tools helm-ag multi-term company lsp-ui lsp-mode helm which-key treemacs-persp treemacs-magit treemacs-icons-dired treemacs-projectile treemacs-evil use-package treemacs auto-complete))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
