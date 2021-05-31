@@ -102,7 +102,8 @@
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration))
 
-  :commands lsp)
+  :commands lsp
+  )
 
 ;; optionally
 (use-package lsp-ui :ensure t :commands lsp-ui-mode)
@@ -202,6 +203,9 @@
      ("\\?\\?\\?+" . "#dc752f")))
  '(lsp-file-watch-ignored-directories
    '("[/\\\\]\\.git$" "[/\\\\]\\.hg$" "[/\\\\]\\.bzr$" "[/\\\\]_darcs$" "[/\\\\]\\.svn$" "[/\\\\]_FOSSIL_$" "[/\\\\]\\.idea$" "[/\\\\]\\.ensime_cache$" "[/\\\\]\\.eunit$" "[/\\\\]node_modules$" "[/\\\\]\\.fslckout$" "[/\\\\]\\.tox$" "[/\\\\]\\.stack-work$" "[/\\\\]\\.bloop$" "[/\\\\]\\.metals$" "[/\\\\]target$" "[/\\\\]\\.ccls-cache$" "[/\\\\]\\.deps$" "[/\\\\]build-aux$" "[/\\\\]autom4te.cache$" "[/\\\\]\\.reference$" "[/\\\\]gSearch$"))
+ '(lsp-pyls-plugins-autopep8-enabled nil)
+ '(lsp-pyls-plugins-yapf-enabled t)
+ '(lsp-pylsp-plugins-yapf-enabled t)
  '(org-format-latex-options
    '(:foreground default :background default :scale 2.0 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
 		 ("begin" "$1" "$" "$$" "\\(" "\\[")))
