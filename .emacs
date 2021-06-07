@@ -16,6 +16,11 @@
 ;; (global-git-gutter-mode Nil)
 (projectile-mode +1)
 
+;; LSP Settings
+(setq read-process-output-max 3000000) ;; 3mb
+(setq gc-cons-threshold 900000000) ;; 900mb
+(setq lsp-idle-delay 0.500)
+(setq lsp-log-io nil)
 ;; (Info-find-node "emacs" "Auto Save Control")
 ;; (use-package focus-autosave-mode
 ;;   :config (focus-autosave-mode 1))
@@ -104,6 +109,13 @@
 
   :commands lsp
   )
+
+(use-package lsp-python-ms
+  :ensure t
+  :init (setq lsp-python-ms-auto-install-server t)
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-python-ms)
+                          (lsp))))  ; or lsp-deferred
 
 ;; optionally
 (use-package lsp-ui :ensure t :commands lsp-ui-mode)
@@ -217,7 +229,7 @@
    '(:foreground default :background default :scale 2.0 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
 		 ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(package-selected-packages
-   '(xterm-color helm-projectile markdown-preview-mode git-gutter golden-ratio langtool spacemacs-theme solarized-theme hemisu-theme hemisu-light-theme espresso-theme leuven-theme anti-zenburn-theme flycheck flychecker plantuml-mode srefactor cmake-mode magit-todos crux latex-preview-pane preview-latex auctex yasnippet-snippets yasnippet jupyter ein spaceline spaceline-config hl-todo pdf-tools helm-ag multi-term company lsp-ui lsp-mode helm which-key treemacs-persp treemacs-magit treemacs-icons-dired treemacs-projectile treemacs-evil use-package treemacs auto-complete))
+   '(lsp-python-ms xterm-color helm-projectile markdown-preview-mode git-gutter golden-ratio langtool spacemacs-theme solarized-theme hemisu-theme hemisu-light-theme espresso-theme leuven-theme anti-zenburn-theme flycheck flychecker plantuml-mode srefactor cmake-mode magit-todos crux latex-preview-pane preview-latex auctex yasnippet-snippets yasnippet jupyter ein spaceline spaceline-config hl-todo pdf-tools helm-ag multi-term company lsp-ui lsp-mode helm which-key treemacs-persp treemacs-magit treemacs-icons-dired treemacs-projectile treemacs-evil use-package treemacs auto-complete))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
