@@ -40,6 +40,7 @@ mkdir -p $BUILD_DIR $INSTALL_DIR
 # Checkout the desired branch
 cd $SRC_DIR
 git checkout $BRANCH_NAME
+# git checkout -b native-comp origin/feature/native-comp
 
 # GEnerate Config
 cd $SRC_DIR
@@ -50,6 +51,6 @@ set +e
 make clean
 set -e
 
-$SRC_DIR/configure --prefix=$INSTALL_DIR
+$SRC_DIR/configure --prefix=$INSTALL_DIR --with-native-compilation --with-mailutils
 make -j$CPU_CORES
 make install
