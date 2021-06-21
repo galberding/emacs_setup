@@ -73,3 +73,5 @@
 (define-key leader-map "yi" 'yas-insert-snippet)
 
 (define-key leader-map "P" 'projectile-command-map)
+
+(global-set-key (kbd "M-o") 'ace-window)

@@ -2,3 +2,4 @@
 ccls/
 *~
 exclude/
+llvm-project/

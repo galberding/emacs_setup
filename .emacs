@@ -117,6 +117,19 @@
                           (require 'lsp-python-ms)
                           (lsp))))  ; or lsp-deferred
 
+(use-package lsp-pyright
+  :ensure t
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp))))
+(setq lsp-dart-sdk-dir "/home/schorschi/snap/flutter/common/flutter/bin/cache/dart-sdk")
+(use-package lsp-dart
+  :ensure t
+  :hook (dart-mode . lsp))
+
+;; Optional Flutter packages
+(use-package hover :ensure t) ;; run app from desktop without emulator
+
 ;; optionally
 (use-package lsp-ui :ensure t :commands lsp-ui-mode)
 ;; if you are helm user
@@ -225,11 +238,13 @@
  '(lsp-pyls-plugins-autopep8-enabled nil)
  '(lsp-pyls-plugins-yapf-enabled t)
  '(lsp-pylsp-plugins-yapf-enabled t)
+ '(lsp-pyright-typechecking-mode "basic")
+ '(lsp-pyright-venv-path "/home/schorschi/miniconda3/envs")
  '(org-format-latex-options
    '(:foreground default :background default :scale 2.0 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
 		 ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(package-selected-packages
-   '(lsp-python-ms xterm-color helm-projectile markdown-preview-mode git-gutter golden-ratio langtool spacemacs-theme solarized-theme hemisu-theme hemisu-light-theme espresso-theme leuven-theme anti-zenburn-theme flycheck flychecker plantuml-mode srefactor cmake-mode magit-todos crux latex-preview-pane preview-latex auctex yasnippet-snippets yasnippet jupyter ein spaceline spaceline-config hl-todo pdf-tools helm-ag multi-term company lsp-ui lsp-mode helm which-key treemacs-persp treemacs-magit treemacs-icons-dired treemacs-projectile treemacs-evil use-package treemacs auto-complete))
+   '(hover lsp-dart lsp-pyright lsp-python-ms xterm-color helm-projectile markdown-preview-mode git-gutter golden-ratio langtool spacemacs-theme solarized-theme hemisu-theme hemisu-light-theme espresso-theme leuven-theme anti-zenburn-theme flycheck flychecker plantuml-mode srefactor cmake-mode magit-todos crux latex-preview-pane preview-latex auctex yasnippet-snippets yasnippet jupyter ein spaceline spaceline-config hl-todo pdf-tools helm-ag multi-term company lsp-ui lsp-mode helm which-key treemacs-persp treemacs-magit treemacs-icons-dired treemacs-projectile treemacs-evil use-package treemacs auto-complete))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
